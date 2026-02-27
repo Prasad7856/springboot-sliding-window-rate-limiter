@@ -97,6 +97,7 @@ docker run -p 8080:8080 sliding-window-rate-limiter
       Automated deployment to target environment
 
 Pipeline Flow
+
 <img width="510" height="262" alt="image" src="https://github.com/user-attachments/assets/a576bf27-d816-4e64-a3b9-6eaabd374d55" />
 
 Key Features
