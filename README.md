@@ -3,6 +3,20 @@
       A lightweight, application-level rate limiting service built using the Sliding Window algorithm to control API traffic and prevent abuse.
       
       This project demonstrates how per-client request limiting can be implemented using Spring Boot interceptors and thread-safe concurrent data structures.
+      
+      This project demonstrates:
+
+            Per-client request limiting
+      
+            Interceptor-based enforcement
+            
+            Thread-safe concurrent handling
+            
+            Dockerized deployment
+            
+            Automated CI/CD using Jenkins
+            
+            Webhook-triggered continuous delivery
 
 📌 Problem Statement
 
@@ -53,6 +67,48 @@
 
 
 The rate limiter executes before controller invocation, making it reusable across all endpoints without modifying business logic.
+
+🐳 Containerization (Docker)
+
+      The application is containerized using a multi-stage Docker build:
+      
+            Stage 1: Maven build (artifact packaging)
+            
+            Stage 2: Lightweight JDK runtime image
+            
+            Non-root user execution (security best practice)
+
+Build locally:
+docker build -t sliding-window-rate-limiter .
+
+Run:
+docker run -p 8080:8080 sliding-window-rate-limiter
+
+🔄 CI/CD Pipeline (Jenkins + Webhook)
+
+      This project includes a fully automated CI/CD pipeline using:
+      
+      Jenkins (Pipeline as Code via Jenkinsfile)
+      
+      Docker image build and push
+      
+      Webhook-triggered execution from GitHub
+      
+      Automated deployment to target environment
+
+Pipeline Flow
+<img width="510" height="262" alt="image" src="https://github.com/user-attachments/assets/a576bf27-d816-4e64-a3b9-6eaabd374d55" />
+
+Key Features
+
+      Multi-stage Docker build for optimized image size
+      
+      Secure credential handling via Jenkins credentials store
+      
+      Automated deployment via SSH
+      
+      No manual build or release steps required
+
 
 ▶ Running the Application
       1️⃣ Clone the repository
@@ -116,9 +172,13 @@ HTTP 429 - Too Many Requests
       This implementation explores:
       
       🧵 Concurrency handling in Java
-      
+
       🔍 Request interception in Spring Boot
       
-      🛡 Defensive backend system design
+      🛡 Defensive backend design
+      
+      🐳 Containerized deployment
+      
+      🔄 Automated CI/CD engineering practices
       
       ⚡ Efficient in-memory request tracking
